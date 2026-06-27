@@ -14,6 +14,8 @@ const app = express();
 
 app.use(express.json());
 
+app.use("/api/cars", carsRouter);
+
 if (process.env.NODE_ENV === "development") {
   app.use(favicon(path.resolve("../", "client", "public", "lightning.png")));
 } else if (process.env.NODE_ENV === "production") {
@@ -26,8 +28,6 @@ if (process.env.NODE_ENV === "development") {
 if (process.env.NODE_ENV === "production") {
   app.get("/*", (_, res) => res.sendFile(path.resolve("public", "index.html")));
 }
-
-app.use("/api/cars", carsRouter);
 
 app.listen(PORT, () => {
   console.log(`server listening on http://localhost:${PORT}`);
