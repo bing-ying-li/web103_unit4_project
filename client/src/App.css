@@ -434,3 +434,46 @@
     flex-direction: column;
   }
 }
+.edit-form-actions {
+  margin-top: 12px;
+  display: flex;
+  gap: 12px;
+  align-items: stretch;
+}
+
+.edit-form-actions button,
+.edit-form-actions .secondary-link {
+  flex: 1;
+  margin-top: 0;
+}
+
+.edit-form-actions .secondary-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@media (max-width: 520px) {
+  .edit-form-actions {
+    flex-direction: column;
+  }
+}
+
+.form-section {
+  color: #1f2937;
+}
+
+.form-section h1 {
+  color: #111827;
+}
+
+.form-section > p {
+  color: #4b5563;
+}
+
+.form-section label,
+.checkbox-row,
+.price-display,
+.price-display strong {
+  color: #1f2937;
+}
