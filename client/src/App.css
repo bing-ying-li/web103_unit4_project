@@ -1,12 +1,205 @@
 .app {
-    background: url('./assets/background.jpg');
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
-    width: 100vw;
-    height: 100vh;
-    overflow-y: scroll;
-    overflow-x: hidden;
-    padding-bottom: 50px;
+  background: url("./assets/background.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  width: 100vw;
+  height: 100vh;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  padding-bottom: 50px;
+}
+.page-container {
+  width: min(1100px, 92%);
+  margin: 40px auto;
+  display: grid;
+  grid-template-columns: minmax(300px, 1fr) minmax(300px, 1fr);
+  gap: 40px;
+  align-items: start;
+}
+
+.form-section,
+.preview-section {
+  padding: 28px;
+  border-radius: 16px;
+  background: white;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+}
+
+.form-section form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.form-section label {
+  margin-top: 6px;
+  font-weight: 700;
+}
+
+.form-section input,
+.form-section select {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #b8b8b8;
+  border-radius: 8px;
+  font-size: 1rem;
+}
+
+.form-section button {
+  margin-top: 12px;
+  padding: 14px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.form-section button:disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.checkbox-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.checkbox-row input {
+  width: auto;
+}
+
+.price-display {
+  margin-top: 14px;
+  padding: 16px;
+  display: flex;
+  justify-content: space-between;
+  border-radius: 8px;
+  background: #f2f2f2;
+  font-size: 1.2rem;
+}
+
+.error-message {
+  margin-bottom: 16px;
+  padding: 12px;
+  border-radius: 8px;
+  background: #ffe4e4;
+  color: #9c1515;
+}
+
+.warning-message {
+  margin: 0;
+  color: #9a5600;
+}
+
+.preview-section {
+  text-align: center;
+}
+
+.car-preview {
+  position: relative;
+  width: 320px;
+  height: 210px;
+  max-width: 100%;
+  margin: 30px auto;
+}
+
+.car-body {
+  position: absolute;
+  left: 35px;
+  bottom: 55px;
+  width: 250px;
+  height: 80px;
+  border: 3px solid #222;
+  border-radius: 50px 50px 20px 20px;
+  transition: all 0.3s ease;
+}
+
+.car-window {
+  position: absolute;
+  top: -43px;
+  left: 65px;
+  width: 125px;
+  height: 50px;
+  border: 3px solid #222;
+  border-bottom: none;
+  border-radius: 60px 60px 0 0;
+  background: #bde3f4;
+}
+
+.car-spoiler {
+  position: absolute;
+  right: -24px;
+  top: -17px;
+  width: 55px;
+  height: 8px;
+  border: 3px solid #222;
+  background: inherit;
+}
+
+.car-wheel {
+  position: absolute;
+  bottom: 28px;
+  width: 52px;
+  height: 52px;
+  border: 8px solid #222;
+  border-radius: 50%;
+  background: #888;
+  transition: all 0.3s ease;
+}
+
+.front-wheel {
+  right: 52px;
+}
+
+.rear-wheel {
+  left: 52px;
+}
+
+.roadster .car-body {
+  left: 50px;
+  width: 220px;
+  height: 65px;
+}
+
+.roadster .car-window {
+  left: 60px;
+  width: 105px;
+  height: 38px;
+}
+
+.suv .car-body {
+  left: 30px;
+  width: 265px;
+  height: 105px;
+  border-radius: 25px 25px 15px 15px;
+}
+
+.suv .car-window {
+  top: -30px;
+  left: 55px;
+  width: 145px;
+  height: 42px;
+  border-radius: 20px 20px 0 0;
+}
+
+.sport {
+  border-width: 6px;
+  background: radial-gradient(circle, #ddd 15%, #333 18%, #ddd 45%, #333 48%);
+}
+
+.offroad {
+  width: 64px;
+  height: 64px;
+  border-width: 11px;
+  background: #777;
+}
+
+@media (max-width: 760px) {
+  .page-container {
+    grid-template-columns: 1fr;
+  }
 }
