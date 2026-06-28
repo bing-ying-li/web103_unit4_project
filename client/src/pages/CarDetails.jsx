@@ -100,6 +100,7 @@ const CarDetails = ({ title }) => {
           model={car.model}
           color={car.color}
           wheels={car.wheels}
+          interior={car.interior}
           spoiler={car.spoiler}
         />
       </section>

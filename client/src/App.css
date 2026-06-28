@@ -477,3 +477,39 @@
 .price-display strong {
   color: #1f2937;
 }
+.car-window {
+  overflow: hidden;
+}
+
+.car-seat {
+  position: absolute;
+  bottom: 0;
+  width: 25px;
+  height: 30px;
+  border: 2px solid #222;
+  border-radius: 8px 8px 2px 2px;
+}
+
+.driver-seat {
+  left: 25px;
+}
+
+.passenger-seat {
+  right: 25px;
+}
+
+/* Fabric interior */
+.car-window.fabric .car-seat {
+  background: #9ca3af;
+}
+
+/* Leather interior */
+.car-window.leather .car-seat {
+  background: #5b2c1f;
+}
+
+/* Premium interior */
+.car-window.premium .car-seat {
+  background: linear-gradient(135deg, #d4af37 0%, #fff1a8 50%, #d4af37 100%);
+  border-color: #6b4f00;
+}

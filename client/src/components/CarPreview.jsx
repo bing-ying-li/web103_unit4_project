@@ -7,9 +7,12 @@ const COLOR_MAP = {
   Blue: "#2563eb",
 };
 
-const CarPreview = ({ model, color, wheels, spoiler }) => {
+const CarPreview = ({ model, color, wheels, interior, spoiler }) => {
   const modelClass = model.toLowerCase();
+
   const wheelClass = wheels.toLowerCase().replace("-", "");
+
+  const interiorClass = interior.toLowerCase();
 
   return (
     <section className="preview-section">
@@ -22,7 +25,10 @@ const CarPreview = ({ model, color, wheels, spoiler }) => {
             backgroundColor: COLOR_MAP[color],
           }}
         >
-          <div className="car-window" />
+          <div className={`car-window ${interiorClass}`}>
+            <div className="car-seat driver-seat" />
+            <div className="car-seat passenger-seat" />
+          </div>
 
           {spoiler && <div className="car-spoiler" />}
         </div>
@@ -33,7 +39,7 @@ const CarPreview = ({ model, color, wheels, spoiler }) => {
       </div>
 
       <p>
-        {color} {model} with {wheels} wheels
+        {color} {model} with {wheels} wheels and {interior} interior
       </p>
     </section>
   );

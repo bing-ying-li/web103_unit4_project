@@ -254,6 +254,7 @@ const EditCar = ({ title }) => {
         model={car.model}
         color={car.color}
         wheels={car.wheels}
+        interior={car.interior}
         spoiler={car.spoiler}
       />
     </main>
